@@ -6,6 +6,16 @@ public class TouristTicket extends Ticket {
     String hotelAddress;
     String[] selectedTouristLocation=new String[5];
 
+    public TouristTicket(String pnr, String from, String to, String departureDateTime,
+                         String arrivalDateTime, String seatNo, int price, boolean cancelled,
+                         String hotelAddress, String[] selectedTouristLocation, Flight flight,Passenger passenger) {
+        super(pnr,from,to,departureDateTime,arrivalDateTime,seatNo,price,cancelled,flight,passenger);
+        this.hotelAddress=hotelAddress;
+        this.selectedTouristLocation=selectedTouristLocation;
+
+
+    }
+
 
     String checkStatus(){
         return "";
