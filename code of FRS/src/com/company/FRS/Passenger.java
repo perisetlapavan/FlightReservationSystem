@@ -76,11 +76,10 @@ public class Passenger {
         this.address.state=address.state;
     }
 
-
-
+    
     public Passenger(){
-        Address address=new Address();
-        Contact contact=new Contact();
+        this.address=new Address();
+        this.contact=new Contact();
         this.id=idCounter;
         idCounter++;
 

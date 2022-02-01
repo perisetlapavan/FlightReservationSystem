@@ -1,20 +1,10 @@
 package com.company.FRS;
 
-public class TouristTicket  {
-    String pnr;
-    String from;
-    String to;
-    String departureDateTime;
-    String arrivalDateTime;
-    String seatNo;
-    float price;
-    boolean cancelled;
+public class TouristTicket extends Ticket {
+
 
     String hotelAddress;
     String[] selectedTouristLocation=new String[5];
-
-    Flight flight;
-    Passenger passenger;
 
 
     String checkStatus(){
@@ -40,9 +30,15 @@ public class TouristTicket  {
 
     }
 
-    TouristTicket(Flight flight,Passenger passenger){
 
-        this.flight=flight;
-        this.passenger=passenger;
-    }
+
+   TouristTicket(String pnr,String from,String to,String departureDateTime,String arrivalDateTime,String seatNo,
+                 float price,boolean cancelled,String hotelAddress,String[] selectedTouristLocation,Flight flight,
+                 Passenger passenger){
+        super(pnr,from,to,departureDateTime,arrivalDateTime,seatNo,price,cancelled,flight,passenger);
+        this.hotelAddress=hotelAddress;
+        this.selectedTouristLocation=selectedTouristLocation;
+
+   }
+
 }

@@ -1,30 +1,11 @@
 package com.company.FRS;
 
-public class RegularTicket  {
-    String pnr;
-    String from;
-    String to;
-    String departureDateTime;
-    String arrivalDateTime;
-    String seatNo;
-    float price;
-    boolean cancelled;
+public class RegularTicket extends Ticket  {
+
 
     private String specialServices;
 
-    Flight flight;
-    Passenger passenger;
 
-
-    String checkStatus(){
-        return "";
-    }
-    int getFlightDuration(){
-        return 2;
-    }
-    void cancel(){
-
-    }
 
     public String getSpecialServices(){
         return specialServices;
@@ -34,10 +15,12 @@ public class RegularTicket  {
         this.specialServices=specialServices;
     }
 
-    public RegularTicket(Flight flight,Passenger passenger){
 
-        this.flight=flight;
-        this.passenger=passenger;
+    RegularTicket(String pnr,String from,String to,String departureDateTime,String arrivalDateTime,String seatNo,
+                  float price,boolean cancelled,String specialServices,Flight flight,
+                  Passenger passenger){
+        super(pnr,from,to,departureDateTime,arrivalDateTime,seatNo,price,cancelled,flight,passenger);
+        this.specialServices=specialServices;
     }
 
 
