@@ -1,6 +1,6 @@
 package com.company.FRS;
 
-public class RegularTicket {
+public class RegularTicket  {
     String pnr;
     String from;
     String to;
@@ -9,7 +9,12 @@ public class RegularTicket {
     String seatNo;
     float price;
     boolean cancelled;
-    String specialServices;
+
+    private String specialServices;
+
+    Flight flight;
+    Passenger passenger;
+
 
     String checkStatus(){
         return "";
@@ -20,10 +25,20 @@ public class RegularTicket {
     void cancel(){
 
     }
-    String getSpecialServices(){
-        return "";
-    }
-    void updateSpecialServices(String specialServices){
 
+    public String getSpecialServices(){
+        return specialServices;
     }
+
+    public void setSpecialServices(String specialServices){
+        this.specialServices=specialServices;
+    }
+
+    public RegularTicket(Flight flight,Passenger passenger){
+
+        this.flight=flight;
+        this.passenger=passenger;
+    }
+
+
 }
