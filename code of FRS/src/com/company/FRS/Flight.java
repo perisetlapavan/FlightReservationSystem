@@ -1,12 +1,12 @@
 package com.company.FRS;
 
 public class Flight {
-    private String flightNumber;
+    private String flightNumber;//variable declaration
     private String airline;
     private int capacity;
-    private int bookedSeats;//still didn't wrote method for it
+    private int bookedSeats;
 
-    public String getFlightNumber(){
+    public String getFlightNumber(){//getters and setters part
         return flightNumber;
     }
     public String getAirline(){
@@ -37,5 +37,12 @@ public class Flight {
     Passenger passenger;
     void incrementSeatsBooked(){
         bookedSeats=passenger.getIdCounter();
+    }
+
+    Flight(String flightNumber,String airline,int capacity){//Constructor
+        this.flightNumber=flightNumber;
+        this.airline=airline;
+        this.capacity=capacity;
+
     }
 }

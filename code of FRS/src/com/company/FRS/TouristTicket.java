@@ -3,48 +3,38 @@ package com.company.FRS;
 public class TouristTicket extends Ticket {
 
 
-    String hotelAddress;
-    String[] selectedTouristLocation=new String[5];
-
-    public TouristTicket(String pnr, String from, String to, String departureDateTime,
-                         String arrivalDateTime, String seatNo, int price, boolean cancelled,
-                         String hotelAddress, String[] selectedTouristLocation, Flight flight,Passenger passenger) {
-        super(pnr,from,to,departureDateTime,arrivalDateTime,seatNo,price,cancelled,flight,passenger);
-        this.hotelAddress=hotelAddress;
-        this.selectedTouristLocation=selectedTouristLocation;
+    private String hotelAddress;
+    private String[] selectedTouristLocation=new String[5];
 
 
-    }
 
-
-    String checkStatus(){
-        return "";
-    }
-    int getFlightDuration(){
-        return Integer.valueOf(arrivalDateTime)-Integer.valueOf(departureDateTime);//24 hour time
-    }
-    void cancel(){
-
-    }
-
-    String getHotelAddress(){
-        return hotelAddress;
+    String getHotelAddress(){//getters
+        return this.hotelAddress;
     }
     String[] getTouristLocation(){
-        return selectedTouristLocation;
+        return this.selectedTouristLocation;
     }
-    void removeTouristLocations(String Location){
-
+    void removeTouristLocations(String Location){//removing tourist location
+      for(int i=0;i<5;i++){
+          if(selectedTouristLocation[i]==Location){
+              selectedTouristLocation[i]=null;
+          }
+      }
     }
-    void addTouristLocations(String location){
-
+    void addTouristLocations(String location){//adding tourist location
+       for(int i=0;i<5;i++){
+           if(selectedTouristLocation[i]==null){
+               selectedTouristLocation[i]=location;
+               break;
+           }
+       }
     }
 
 
 
    TouristTicket(String pnr,String from,String to,String departureDateTime,String arrivalDateTime,String seatNo,
                  float price,boolean cancelled,String hotelAddress,String[] selectedTouristLocation,Flight flight,
-                 Passenger passenger){
+                 Passenger passenger){//constructots including super keyword in it.
         super(pnr,from,to,departureDateTime,arrivalDateTime,seatNo,price,cancelled,flight,passenger);
         this.hotelAddress=hotelAddress;
         this.selectedTouristLocation=selectedTouristLocation;

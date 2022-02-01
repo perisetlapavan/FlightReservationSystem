@@ -1,23 +1,33 @@
 package com.company.FRS;
 
 public abstract class Ticket {
-    String pnr;
-    String from;
-    String to;
-    String departureDateTime;
-    String arrivalDateTime;
-    String seatNo;
-    float price;
-    boolean cancelled;
+    private String pnr;//variable declaration
+    private String from;
+    private String to;
+    private String departureDateTime;
+    private String arrivalDateTime;
+    private String seatNo;
+    private float price;
+    private boolean cancelled;
 
     Flight flight;
     Passenger passenger;
+
+    public String getPnr(){//getters
+        return this.pnr;
+    }
+    public String getDepartureDateTime(){
+        return  departureDateTime;
+    }
+    public String getArrivalDateTime(){
+        return this.arrivalDateTime;
+    }
 
     String checkStatus(){
         return "";
     }
     int getFlightDuration(){
-        return 2;
+        return Integer.valueOf(getArrivalDateTime())-Integer.valueOf(getDepartureDateTime());//24 hour time
     }
     void cancel(){
 

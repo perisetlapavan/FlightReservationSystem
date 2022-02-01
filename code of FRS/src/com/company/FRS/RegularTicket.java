@@ -1,13 +1,13 @@
 package com.company.FRS;
 
-public class RegularTicket extends Ticket  {
+public class RegularTicket extends Ticket  {//child class inheriting from parent class
 
 
     private String specialServices;
 
 
 
-    public String getSpecialServices(){
+    public String getSpecialServices(){//getters and setters
         return specialServices;
     }
 
@@ -18,7 +18,7 @@ public class RegularTicket extends Ticket  {
 
     RegularTicket(String pnr,String from,String to,String departureDateTime,String arrivalDateTime,String seatNo,
                   float price,boolean cancelled,String specialServices,Flight flight,
-                  Passenger passenger){
+                  Passenger passenger){//Constructor
         super(pnr,from,to,departureDateTime,arrivalDateTime,seatNo,price,cancelled,flight,passenger);
         this.specialServices=specialServices;
     }
